@@ -9,7 +9,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.path.join(APP_DIR, "navigator.db")
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.join(APP_DIR, "templates"))
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "change-this-secret-before-deployment")
 app.config["MAX_CONTENT_LENGTH"] = 2 * 1024 * 1024
 
