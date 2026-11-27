@@ -91,9 +91,7 @@
         // Инициализируем карту (центр на Мегино-Кангаласском улусе)
         var map = L.map('map').setView([61.95, 129.9], 8); 
         
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+        L.yandex('yandex#map').addTo(map);
 
         // Получаем данные из Python (Flask)
         var mapPlaces = {{ map_places | tojson }};
