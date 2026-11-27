@@ -28,9 +28,14 @@
         </a>
 
         <!-- НАВИГАЦИЯ ПО САЙТУ -->
+                <!-- НАВИГАЦИЯ ПО САЙТУ -->
         <nav style="display: flex; gap: 20px;">
             <a href="{{ url_for('index') }}" style="text-decoration: none; color: #333; font-weight: 500;">Путеводитель</a>
-            <a href="{{ url_for('admin') }}" style="text-decoration: none; color: #333; font-weight: 500;">Администрирование</a>
+            
+            <!-- Показываем админку ТОЛЬКО если вошел администратор -->
+            {% if session.get('admin_id') %}
+                <a href="{{ url_for('admin') }}" style="text-decoration: none; color: #333; font-weight: 500;">Администрирование</a>
+            {% endif %}
         </nav>
 
         <!-- БЛОК ВХОДА И РЕГИСТРАЦИИ -->
