@@ -11,6 +11,13 @@
 <header class="site-header">
   <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">М</span><span>Мегино-Кangalасский улус<small>Цифровой навигатор по наследию</small></span></a>
   <nav><a href="{{ url_for('index') }}">Путеводитель</a><a href="{{ url_for('admin') }}">Администрирование</a></nav>
+  11    <header class="site-header">
+12        <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">МК</span>Мегино-Кангаласский улус...</a>
+13        <nav><a href="{{ url_for('index') }}">Путеводитель</a><a href="{{ url_for('admin') }}">Администрирование</a></nav>
+14        <!-- ВСТАВЛЕННЫЙ БЛОК НАЧИНАЕТСЯ ЗДЕСЬ -->
+15        <div style="text-align: right; margin-top: 10px;">
+16            {% if session.get('username') %}
+...
 </header>
 <main class="container">
   {% with messages = get_flashed_messages(with_categories=true) %}
